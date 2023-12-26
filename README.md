@@ -1,4 +1,4 @@
-# SWE2-392-Project
+# SWE2-CS392-Project
 The CS world 
 Shahad Abdulhadi Alqhtani
 Sara Saad Almukati
