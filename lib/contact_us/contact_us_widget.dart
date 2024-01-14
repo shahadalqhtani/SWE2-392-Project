@@ -125,28 +125,28 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                             color: FlutterFlowTheme.of(context).alternate,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).primary,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
                         fillColor:
@@ -189,28 +189,28 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                             color: FlutterFlowTheme.of(context).alternate,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).primary,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
                         fillColor:
@@ -257,28 +257,28 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                             color: FlutterFlowTheme.of(context).alternate,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).primary,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         focusedErrorBorder: OutlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).error,
                             width: 2.0,
                           ),
-                          borderRadius: BorderRadius.circular(0.0),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                         filled: true,
                         fillColor:

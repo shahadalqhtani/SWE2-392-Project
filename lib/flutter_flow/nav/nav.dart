@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -150,8 +151,117 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Contact',
           path: '/contact',
           builder: (context, params) => const ContactWidget(),
+        ),
+        FFRoute(
+          name: 'JavaProgramming1',
+          path: '/javaProgramming1',
+          builder: (context, params) => const JavaProgramming1Widget(),
+        ),
+        FFRoute(
+          name: 'Java1LessonsList',
+          path: '/java1LessonsList',
+          builder: (context, params) => const Java1LessonsListWidget(),
+        ),
+        FFRoute(
+          name: 'DSLessonsLIst',
+          path: '/dSLessonsLIst',
+          builder: (context, params) => const DSLessonsLIstWidget(),
+        ),
+        FFRoute(
+          name: 'DiscreteStructure',
+          path: '/discreteStructure',
+          builder: (context, params) => const DiscreteStructureWidget(),
+        ),
+        FFRoute(
+          name: 'SoftwareEngineering',
+          path: '/softwareEngineering',
+          builder: (context, params) => const SoftwareEngineeringWidget(),
+        ),
+        FFRoute(
+          name: 'DiscruteAssigment',
+          path: '/discruteAssigment',
+          builder: (context, params) => const DiscruteAssigmentWidget(),
+        ),
+        FFRoute(
+          name: 'discruteAssigmentOne',
+          path: '/discruteAssigmentOne',
+          builder: (context, params) => const DiscruteAssigmentOneWidget(),
+        ),
+        FFRoute(
+          name: 'JavaProgramming2',
+          path: '/javaProgramming2',
+          builder: (context, params) => const JavaProgramming2Widget(),
+        ),
+        FFRoute(
+          name: 'Java2LessonsList',
+          path: '/java2LessonsList',
+          builder: (context, params) => const Java2LessonsListWidget(),
+        ),
+        FFRoute(
+          name: 'Java1Assignment',
+          path: '/java1Assignment',
+          builder: (context, params) => const Java1AssignmentWidget(),
+        ),
+        FFRoute(
+          name: 'DiscreteAssignmentTwo',
+          path: '/discreteAssignmentTwo',
+          builder: (context, params) => const DiscreteAssignmentTwoWidget(),
+        ),
+        FFRoute(
+          name: 'Java1AssignmentOne',
+          path: '/java1AssignmentOne',
+          builder: (context, params) => const Java1AssignmentOneWidget(),
+        ),
+        FFRoute(
+          name: 'Java1AssignmentTwo',
+          path: '/java1AssignmentTwo',
+          builder: (context, params) => const Java1AssignmentTwoWidget(),
+        ),
+        FFRoute(
+          name: 'java1Lessons',
+          path: '/java1Lessons',
+          builder: (context, params) => Java1LessonsWidget(
+            lesson: params.getParam<DocumentReference>(
+                'lesson', ParamType.DocumentReference, true, ['java1']),
+          ),
+        ),
+        FFRoute(
+          name: 'Java2Assignment',
+          path: '/java2Assignment',
+          builder: (context, params) => const Java2AssignmentWidget(),
+        ),
+        FFRoute(
+          name: 'Java2AssignmentOne',
+          path: '/java2AssignmentOne',
+          builder: (context, params) => const Java2AssignmentOneWidget(),
+        ),
+        FFRoute(
+          name: 'Java2AssignmentTwo',
+          path: '/java2AssignmentTwo',
+          builder: (context, params) => const Java2AssignmentTwoWidget(),
+        ),
+        FFRoute(
+          name: 'SoftWareAssignment',
+          path: '/softWareAssignment',
+          builder: (context, params) => const SoftWareAssignmentWidget(),
+        ),
+        FFRoute(
+          name: 'SoftWareAssignmentOne',
+          path: '/softWareAssignmentOne',
+          builder: (context, params) => const SoftWareAssignmentOneWidget(),
+        ),
+        FFRoute(
+          name: 'SoftWareAssignmentTwo',
+          path: '/softWareAssignmentTwo',
+          builder: (context, params) => const SoftWareAssignmentTwoWidget(),
+        ),
+        FFRoute(
+          name: 'Javaquiz',
+          path: '/javaquiz',
+          builder: (context, params) => const JavaquizWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
