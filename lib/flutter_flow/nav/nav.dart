@@ -259,6 +259,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Javaquiz',
           path: '/javaquiz',
           builder: (context, params) => const JavaquizWidget(),
+        ),
+        FFRoute(
+          name: 'JavaBoard',
+          path: '/javaBoard',
+          builder: (context, params) => const JavaBoardWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

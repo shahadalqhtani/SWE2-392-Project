@@ -58,3 +58,4 @@ export '/soft_ware_assignment_one/soft_ware_assignment_one_widget.dart'
 export '/soft_ware_assignment_two/soft_ware_assignment_two_widget.dart'
     show SoftWareAssignmentTwoWidget;
 export '/javaquiz/javaquiz_widget.dart' show JavaquizWidget;
+export '/java_board/java_board_widget.dart' show JavaBoardWidget;
