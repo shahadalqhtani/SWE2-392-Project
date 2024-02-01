@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'edit_profile_auth2_model.dart';
 export 'edit_profile_auth2_model.dart';
 
@@ -23,10 +24,10 @@ class EditProfileAuth2Widget extends StatefulWidget {
 
   final String title;
   final String confirmButtonText;
-  final Future<dynamic> Function()? navigateAction;
+  final Future Function()? navigateAction;
 
   @override
-  _EditProfileAuth2WidgetState createState() => _EditProfileAuth2WidgetState();
+  State<EditProfileAuth2Widget> createState() => _EditProfileAuth2WidgetState();
 }
 
 class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
@@ -70,9 +71,15 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
         children: [
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
-            child: Text(
+            child: GradientText(
               widget.title,
               style: FlutterFlowTheme.of(context).displaySmall,
+              colors: [
+                FlutterFlowTheme.of(context).primary,
+                FlutterFlowTheme.of(context).secondary
+              ],
+              gradientDirection: GradientDirection.ltr,
+              gradientType: GradientType.linear,
             ),
           ),
           Padding(

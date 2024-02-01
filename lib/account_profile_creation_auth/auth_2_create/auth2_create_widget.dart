@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'auth2_create_model.dart';
 export 'auth2_create_model.dart';
 
@@ -14,7 +15,7 @@ class Auth2CreateWidget extends StatefulWidget {
   const Auth2CreateWidget({super.key});
 
   @override
-  _Auth2CreateWidgetState createState() => _Auth2CreateWidgetState();
+  State<Auth2CreateWidget> createState() => _Auth2CreateWidgetState();
 }
 
 class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
@@ -178,11 +179,17 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                           children: [
                             Align(
                               alignment: const AlignmentDirectional(0.0, -1.0),
-                              child: Text(
+                              child: GradientText(
                                 'Get Started',
                                 textAlign: TextAlign.center,
                                 style:
                                     FlutterFlowTheme.of(context).displaySmall,
+                                colors: [
+                                  FlutterFlowTheme.of(context).primary,
+                                  FlutterFlowTheme.of(context).secondary
+                                ],
+                                gradientDirection: GradientDirection.ltr,
+                                gradientType: GradientType.linear,
                               ),
                             ),
                             Align(

@@ -14,7 +14,7 @@ class PageoneWidget extends StatefulWidget {
   const PageoneWidget({super.key});
 
   @override
-  _PageoneWidgetState createState() => _PageoneWidgetState();
+  State<PageoneWidget> createState() => _PageoneWidgetState();
 }
 
 class _PageoneWidgetState extends State<PageoneWidget>
@@ -238,7 +238,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                       Align(
                         alignment: const AlignmentDirectional(0.0, 0.0),
                         child: Column(
-                          mainAxisSize: MainAxisSize.max,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             SizedBox(
                               width: double.infinity,
@@ -261,7 +261,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        48.0, 0.0, 48.0, 0.0),
+                                                        48.0, 0.0, 48.0, 48.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -299,7 +299,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                       child: Image.asset(
                                                         'assets/images/imagep1.png',
                                                         width: 472.0,
-                                                        height: 231.0,
+                                                        height: 185.0,
                                                         fit: BoxFit.fill,
                                                       ),
                                                     ),
@@ -315,17 +315,17 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                         'Welcome to a World of Learning and Enjoyment!',
                                                         textAlign:
                                                             TextAlign.center,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .displaySmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .displaySmall
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 30.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                            ),
                                                       ).animateOnPageLoad(
                                                           animationsMap[
                                                               'textOnPageLoadAnimation1']!),
@@ -335,7 +335,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
-                                                                  20.0,
+                                                                  2.0,
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
@@ -361,7 +361,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                     0.0, 0.0),
                                                 child: Column(
                                                   mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      MainAxisSize.min,
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.end,
                                                   children: [],
@@ -370,22 +370,67 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                             ),
                                             Align(
                                               alignment: const AlignmentDirectional(
-                                                  -0.02, 0.82),
+                                                  -0.04, 0.41),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  await _model
+                                                      .pageViewController
+                                                      ?.nextPage(
+                                                    duration: const Duration(
+                                                        milliseconds: 300),
+                                                    curve: Curves.ease,
+                                                  );
+                                                },
+                                                text: 'Next',
+                                                options: FFButtonOptions(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.5,
+                                                  height: 50.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsets.all(0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium,
+                                                  elevation: 4.0,
+                                                  borderSide: const BorderSide(
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          24.0),
+                                                  hoverColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  hoverTextColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                ),
+                                              ),
+                                            ),
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  -0.01, 0.62),
                                               child: Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        0.0, 70.0, 0.0, 0.0),
+                                                        0.0, 0.0, 0.0, 15.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
-                                                    await _model
-                                                        .pageViewController
-                                                        ?.nextPage(
-                                                      duration: const Duration(
-                                                          milliseconds: 300),
-                                                      curve: Curves.ease,
-                                                    );
+                                                    context.pushNamed(
+                                                        'auth_2_Create');
                                                   },
-                                                  text: 'Next',
+                                                  text: 'Skip',
                                                   options: FFButtonOptions(
                                                     width: MediaQuery.sizeOf(
                                                                 context)
@@ -400,13 +445,19 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                         const EdgeInsets.all(0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium,
-                                                    elevation: 4.0,
+                                                        .secondaryBackground,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleLarge
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 20.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                                    elevation: 0.0,
                                                     borderSide: const BorderSide(
+                                                      color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
@@ -415,55 +466,8 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                     hoverColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .primaryText,
+                                                            .alternate,
                                                   ),
-                                                ),
-                                              ),
-                                            ),
-                                            Align(
-                                              alignment: const AlignmentDirectional(
-                                                  0.0, 1.0),
-                                              child: FFButtonWidget(
-                                                onPressed: () async {
-                                                  context.pushNamed(
-                                                      'auth_2_Create');
-                                                },
-                                                text: 'Skip',
-                                                options: FFButtonOptions(
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.5,
-                                                  height: 50.0,
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 0.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsets.all(0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleLarge
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 20.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                                  elevation: 0.0,
-                                                  borderSide: const BorderSide(
-                                                    color: Colors.transparent,
-                                                    width: 1.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          24.0),
-                                                  hoverColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .alternate,
                                                 ),
                                               ),
                                             ),
@@ -474,7 +478,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      48.0, 0.0, 48.0, 0.0),
+                                                      48.0, 0.0, 48.0, 70.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -505,8 +509,8 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                             8.0),
                                                     child: Image.asset(
                                                       'assets/images/azhnxa0r.png',
-                                                      width: 472.0,
-                                                      height: 211.0,
+                                                      width: 420.0,
+                                                      height: 162.0,
                                                       fit: BoxFit.contain,
                                                     ),
                                                   ),
@@ -525,6 +529,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                           .override(
                                                             fontFamily:
                                                                 'Outfit',
+                                                            fontSize: 30.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -535,7 +540,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                   Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 15.0,
+                                                            .fromSTEB(0.0, 2.0,
                                                                 0.0, 0.0),
                                                     child: Text(
                                                       'Explore a wide range of subjects and engaging activities \nFrom interactive lessons to exciting assignments and quizzes, there\'s something for everyone to learn and enjoy.',
@@ -556,7 +561,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                               opacity: 0.0,
                                               child: Align(
                                                 alignment: AlignmentDirectional(
-                                                    -0.01, 0.0),
+                                                    0.0, 0.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -568,59 +573,53 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                             ),
                                             Align(
                                               alignment: const AlignmentDirectional(
-                                                  0.03, 0.83),
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 80.0, 0.0, 0.0),
-                                                child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    await _model
-                                                        .pageViewController
-                                                        ?.nextPage(
-                                                      duration: const Duration(
-                                                          milliseconds: 300),
-                                                      curve: Curves.ease,
-                                                    );
-                                                  },
-                                                  text: 'Next',
-                                                  options: FFButtonOptions(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
-                                                            .width *
-                                                        0.5,
-                                                    height: 50.0,
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    iconPadding:
-                                                        const EdgeInsets.all(0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium,
-                                                    elevation: 4.0,
-                                                    borderSide: const BorderSide(
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            24.0),
-                                                    hoverColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                  0.01, 0.42),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  await _model
+                                                      .pageViewController
+                                                      ?.nextPage(
+                                                    duration: const Duration(
+                                                        milliseconds: 300),
+                                                    curve: Curves.ease,
+                                                  );
+                                                },
+                                                text: 'Next',
+                                                options: FFButtonOptions(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.5,
+                                                  height: 50.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsets.all(0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium,
+                                                  elevation: 4.0,
+                                                  borderSide: const BorderSide(
+                                                    width: 1.0,
                                                   ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          24.0),
+                                                  hoverColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
                                                 ),
                                               ),
                                             ),
                                             Align(
                                               alignment: const AlignmentDirectional(
-                                                  0.0, 1.0),
+                                                  0.0, 0.54),
                                               child: FFButtonWidget(
                                                 onPressed: () async {
                                                   context.pushNamed(
@@ -631,8 +630,8 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.5,
-                                                  height: 50.0,
+                                                          0.2,
+                                                  height: 20.0,
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),

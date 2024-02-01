@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'contact_us_model.dart';
 export 'contact_us_model.dart';
 
@@ -10,7 +11,7 @@ class ContactUsWidget extends StatefulWidget {
   const ContactUsWidget({super.key});
 
   @override
-  _ContactUsWidgetState createState() => _ContactUsWidgetState();
+  State<ContactUsWidget> createState() => _ContactUsWidgetState();
 }
 
 class _ContactUsWidgetState extends State<ContactUsWidget> {
@@ -88,13 +89,19 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                 Padding(
                   padding:
                       const EdgeInsetsDirectional.fromSTEB(133.0, 20.0, 0.0, 0.0),
-                  child: Text(
+                  child: GradientText(
                     'Contact Us',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Readex Pro',
                           fontSize: 22.0,
                           fontWeight: FontWeight.w600,
                         ),
+                    colors: [
+                      FlutterFlowTheme.of(context).primary,
+                      FlutterFlowTheme.of(context).secondary
+                    ],
+                    gradientDirection: GradientDirection.ltr,
+                    gradientType: GradientType.linear,
                   ),
                 ),
               ],

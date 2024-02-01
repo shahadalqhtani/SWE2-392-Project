@@ -7,6 +7,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'auth2_profile_model.dart';
 export 'auth2_profile_model.dart';
 
@@ -14,7 +15,7 @@ class Auth2ProfileWidget extends StatefulWidget {
   const Auth2ProfileWidget({super.key});
 
   @override
-  _Auth2ProfileWidgetState createState() => _Auth2ProfileWidgetState();
+  State<Auth2ProfileWidget> createState() => _Auth2ProfileWidgetState();
 }
 
 class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
@@ -194,9 +195,15 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 0.0),
                   child: AuthUserStreamWidget(
-                    builder: (context) => Text(
+                    builder: (context) => GradientText(
                       currentUserDisplayName,
                       style: FlutterFlowTheme.of(context).displaySmall,
+                      colors: [
+                        FlutterFlowTheme.of(context).primary,
+                        FlutterFlowTheme.of(context).secondary
+                      ],
+                      gradientDirection: GradientDirection.ltr,
+                      gradientType: GradientType.linear,
                     ),
                   ),
                 ),
@@ -454,75 +461,55 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                 Padding(
                   padding:
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      context.pushNamed('Contact');
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: 60.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
-                          BoxShadow(
-                            blurRadius: 3.0,
-                            color: Color(0x33000000),
-                            offset: Offset(0.0, 1.0),
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(8.0),
-                        shape: BoxShape.rectangle,
-                        border: Border.all(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1.0,
-                        ),
+                  child: Container(
+                    width: double.infinity,
+                    height: 60.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      boxShadow: const [
+                        BoxShadow(
+                          blurRadius: 3.0,
+                          color: Color(0x33000000),
+                          offset: Offset(0.0, 1.0),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(8.0),
+                      shape: BoxShape.rectangle,
+                      border: Border.all(
+                        color: FlutterFlowTheme.of(context).alternate,
+                        width: 1.0,
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed('Contact');
-                          },
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Icon(
-                                Icons.contact_support_sharp,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Icon(
+                            Icons.contact_support_sharp,
+                            color: FlutterFlowTheme.of(context).secondaryText,
+                            size: 24.0,
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'Contact Us',
+                              style: FlutterFlowTheme.of(context).labelLarge,
+                            ),
+                          ),
+                          Expanded(
+                            child: Align(
+                              alignment: const AlignmentDirectional(0.9, 0.0),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
-                                size: 24.0,
+                                size: 18.0,
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Contact Us',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelLarge,
-                                ),
-                              ),
-                              Expanded(
-                                child: Align(
-                                  alignment: const AlignmentDirectional(0.9, 0.0),
-                                  child: Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    size: 18.0,
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
                   ),

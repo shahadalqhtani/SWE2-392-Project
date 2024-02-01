@@ -9,7 +9,7 @@ class PrivacypolicyWidget extends StatefulWidget {
   const PrivacypolicyWidget({super.key});
 
   @override
-  _PrivacypolicyWidgetState createState() => _PrivacypolicyWidgetState();
+  State<PrivacypolicyWidget> createState() => _PrivacypolicyWidgetState();
 }
 
 class _PrivacypolicyWidgetState extends State<PrivacypolicyWidget> {

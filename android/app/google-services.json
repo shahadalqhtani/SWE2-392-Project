@@ -1,51 +1,26 @@
 {
   "project_info": {
-    "project_number": "256087961562",
-    "project_id": "the-cs-world",
-    "storage_bucket": "the-cs-world.appspot.com"
+    "project_number": "108948918146",
+    "project_id": "the-c-s-world-83czhb",
+    "storage_bucket": "the-c-s-world-83czhb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:256087961562:android:da925fe510a07d040f9ae3",
+        "mobilesdk_app_id": "1:108948918146:android:ebfd2309ea3b628bbc499b",
         "android_client_info": {
           "package_name": "com.mycompany.thecsworld"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "256087961562-iu4ohh1o37g9md451rqjc1ocp59j63rf.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.mycompany.thecsworld",
-            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
-          }
-        },
-        {
-          "client_id": "256087961562-ekd74plto987vkqueoa538kk2jq2k78p.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDVTuH-jRb2xcy24fksikS_4yEl4tvxpD0"
+          "current_key": "AIzaSyB6mYPlVDQOuAxj5SwepWMW3I5lv6UXaUE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "256087961562-ekd74plto987vkqueoa538kk2jq2k78p.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "256087961562-q4b91v7iqbmtf10afqvflniei3m6dr3i.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.mycompany.thecsworld"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

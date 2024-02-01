@@ -9,7 +9,7 @@ class TermsofServiceWidget extends StatefulWidget {
   const TermsofServiceWidget({super.key});
 
   @override
-  _TermsofServiceWidgetState createState() => _TermsofServiceWidgetState();
+  State<TermsofServiceWidget> createState() => _TermsofServiceWidgetState();
 }
 
 class _TermsofServiceWidgetState extends State<TermsofServiceWidget> {

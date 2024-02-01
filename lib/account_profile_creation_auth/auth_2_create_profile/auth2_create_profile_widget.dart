@@ -12,7 +12,7 @@ class Auth2CreateProfileWidget extends StatefulWidget {
   const Auth2CreateProfileWidget({super.key});
 
   @override
-  _Auth2CreateProfileWidgetState createState() =>
+  State<Auth2CreateProfileWidget> createState() =>
       _Auth2CreateProfileWidgetState();
 }
 

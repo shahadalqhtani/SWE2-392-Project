@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'auth2_login_model.dart';
 export 'auth2_login_model.dart';
 
@@ -14,7 +15,7 @@ class Auth2LoginWidget extends StatefulWidget {
   const Auth2LoginWidget({super.key});
 
   @override
-  _Auth2LoginWidgetState createState() => _Auth2LoginWidgetState();
+  State<Auth2LoginWidget> createState() => _Auth2LoginWidgetState();
 }
 
 class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
@@ -180,11 +181,17 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
-                                child: Text(
+                                child: GradientText(
                                   'Welcome Back',
                                   textAlign: TextAlign.center,
                                   style:
                                       FlutterFlowTheme.of(context).displaySmall,
+                                  colors: [
+                                    FlutterFlowTheme.of(context).primary,
+                                    FlutterFlowTheme.of(context).secondary
+                                  ],
+                                  gradientDirection: GradientDirection.ltr,
+                                  gradientType: GradientType.linear,
                                 ),
                               ),
                             ),

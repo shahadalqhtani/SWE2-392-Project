@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'auth2_forgot_password_model.dart';
 export 'auth2_forgot_password_model.dart';
 
@@ -14,7 +15,7 @@ class Auth2ForgotPasswordWidget extends StatefulWidget {
   const Auth2ForgotPasswordWidget({super.key});
 
   @override
-  _Auth2ForgotPasswordWidgetState createState() =>
+  State<Auth2ForgotPasswordWidget> createState() =>
       _Auth2ForgotPasswordWidgetState();
 }
 
@@ -200,11 +201,17 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
-                              child: Text(
+                              child: GradientText(
                                 'Forgot Password',
                                 textAlign: TextAlign.center,
                                 style:
                                     FlutterFlowTheme.of(context).displaySmall,
+                                colors: [
+                                  FlutterFlowTheme.of(context).primary,
+                                  FlutterFlowTheme.of(context).secondary
+                                ],
+                                gradientDirection: GradientDirection.ltr,
+                                gradientType: GradientType.linear,
                               ),
                             ),
                             Padding(
