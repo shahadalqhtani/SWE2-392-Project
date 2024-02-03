@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'auth2_create_profile_model.dart';
 export 'auth2_create_profile_model.dart';
 
@@ -82,6 +83,8 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus

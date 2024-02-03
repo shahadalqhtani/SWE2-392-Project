@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'edit_profile_auth2_model.dart';
 export 'edit_profile_auth2_model.dart';
@@ -62,6 +63,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Form(
       key: _model.formKey,
       autovalidateMode: AutovalidateMode.disabled,

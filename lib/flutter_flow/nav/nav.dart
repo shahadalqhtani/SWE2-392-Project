@@ -73,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const PageoneWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const PageoneWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const HomePageWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -202,6 +202,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           },
           builder: (context, params) => QuizWidget(
             naa: params.getParam('naa', ParamType.Document),
+            co: params.getParam('co', ParamType.Color),
           ),
         ),
         FFRoute(
@@ -380,7 +381,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/pageone';
+            return '/homePage';
           }
           return null;
         },

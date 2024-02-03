@@ -1,11 +1,12 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'quiz_widget.dart' show QuizWidget;
+import 'quaa_widget.dart' show QuaaWidget;
 import 'package:flutter/material.dart';
 
-class QuizModel extends FlutterFlowModel<QuizWidget> {
-  ///  State fields for stateful widgets in this page.
+class QuaaModel extends FlutterFlowModel<QuaaWidget> {
+  ///  State fields for stateful widgets in this component.
 
-  final unfocusNode = FocusNode();
+  // State field(s) for Checkbox widget.
+  bool? checkboxValue;
 
   /// Initialization and disposal methods.
 
@@ -13,9 +14,7 @@ class QuizModel extends FlutterFlowModel<QuizWidget> {
   void initState(BuildContext context) {}
 
   @override
-  void dispose() {
-    unfocusNode.dispose();
-  }
+  void dispose() {}
 
   /// Action blocks are added here.
 

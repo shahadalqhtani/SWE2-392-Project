@@ -7,6 +7,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'lesson3_model.dart';
 export 'lesson3_model.dart';
@@ -52,6 +53,8 @@ class _Lesson3WidgetState extends State<Lesson3Widget>
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return StreamBuilder<List<LessonsRecord>>(
       stream: queryLessonsRecord(
