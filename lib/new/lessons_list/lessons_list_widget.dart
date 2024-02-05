@@ -83,59 +83,18 @@ class _LessonsListWidgetState extends State<LessonsListWidget> {
               },
             ),
           ),
-          title: StreamBuilder<List<SubjectsRecord>>(
-            stream: querySubjectsRecord(
-              queryBuilder: (subjectsRecord) => subjectsRecord.where(
-                'names',
-                isEqualTo: widget.name?.names,
-              ),
-              singleRecord: true,
+          title: Align(
+            alignment: const AlignmentDirectional(-1.0, -1.0),
+            child: GradientText(
+              widget.name!.names,
+              style: FlutterFlowTheme.of(context).titleLarge,
+              colors: [
+                FlutterFlowTheme.of(context).primary,
+                FlutterFlowTheme.of(context).secondary
+              ],
+              gradientDirection: GradientDirection.ltr,
+              gradientType: GradientType.linear,
             ),
-            builder: (context, snapshot) {
-              // Customize what your widget looks like when it's loading.
-              if (!snapshot.hasData) {
-                return const Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        Color(0xFF3963EF),
-                      ),
-                    ),
-                  ),
-                );
-              }
-              List<SubjectsRecord> rowSubjectsRecordList = snapshot.data!;
-              // Return an empty Container when the item does not exist.
-              if (snapshot.data!.isEmpty) {
-                return Container();
-              }
-              final rowSubjectsRecord = rowSubjectsRecordList.isNotEmpty
-                  ? rowSubjectsRecordList.first
-                  : null;
-              return Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Align(
-                    alignment: const AlignmentDirectional(-1.0, -1.0),
-                    child: GradientText(
-                      valueOrDefault<String>(
-                        rowSubjectsRecord?.names,
-                        'mmmmmmmm',
-                      ),
-                      style: FlutterFlowTheme.of(context).titleLarge,
-                      colors: [
-                        FlutterFlowTheme.of(context).primary,
-                        FlutterFlowTheme.of(context).secondary
-                      ],
-                      gradientDirection: GradientDirection.ltr,
-                      gradientType: GradientType.linear,
-                    ),
-                  ),
-                ],
-              );
-            },
           ),
           actions: const [],
           centerTitle: false,

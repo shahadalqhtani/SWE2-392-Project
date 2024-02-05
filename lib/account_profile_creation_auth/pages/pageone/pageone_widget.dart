@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'pageone_model.dart';
 export 'pageone_model.dart';
 
@@ -314,7 +315,7 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                                   10.0,
                                                                   0.0,
                                                                   0.0),
-                                                      child: Text(
+                                                      child: GradientText(
                                                         'Welcome to a World of Learning and Enjoyment!',
                                                         textAlign:
                                                             TextAlign.center,
@@ -329,6 +330,19 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                                   FontWeight
                                                                       .bold,
                                                             ),
+                                                        colors: [
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary
+                                                        ],
+                                                        gradientDirection:
+                                                            GradientDirection
+                                                                .ltr,
+                                                        gradientType:
+                                                            GradientType.linear,
                                                       ).animateOnPageLoad(
                                                           animationsMap[
                                                               'textOnPageLoadAnimation1']!),
@@ -398,13 +412,23 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                       const EdgeInsets.all(0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMedium,
+                                                      .secondaryBackground,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
                                                   elevation: 4.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
@@ -438,8 +462,8 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                     width: MediaQuery.sizeOf(
                                                                 context)
                                                             .width *
-                                                        0.5,
-                                                    height: 50.0,
+                                                        0.4,
+                                                    height: 40.0,
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
@@ -459,8 +483,11 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                               FontWeight.w500,
                                                         ),
                                                     elevation: 0.0,
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.transparent,
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
@@ -601,13 +628,23 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                       const EdgeInsets.all(0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleMedium,
+                                                      .secondaryBackground,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
                                                   elevation: 4.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
@@ -616,7 +653,11 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                   hoverColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .primaryText,
+                                                          .primary,
+                                                  hoverTextColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
                                                 ),
                                               ),
                                             ),
@@ -814,13 +855,24 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                         const EdgeInsets.all(0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryText,
+                                                        .secondaryBackground,
                                                     textStyle:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .titleMedium,
+                                                            .titleMedium
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Readex Pro',
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                            ),
                                                     elevation: 4.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
@@ -829,7 +881,11 @@ class _PageoneWidgetState extends State<PageoneWidget>
                                                     hoverColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .primaryText,
+                                                            .primary,
+                                                    hoverTextColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primary,
                                                   ),
                                                 ),
                                               ),

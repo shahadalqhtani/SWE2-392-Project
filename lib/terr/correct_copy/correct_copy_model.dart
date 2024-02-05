@@ -1,13 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'quaa_widget.dart' show QuaaWidget;
+import 'correct_copy_widget.dart' show CorrectCopyWidget;
 import 'package:flutter/material.dart';
 
-class QuaaModel extends FlutterFlowModel<QuaaWidget> {
-  ///  State fields for stateful widgets in this component.
-
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue;
-
+class CorrectCopyModel extends FlutterFlowModel<CorrectCopyWidget> {
   /// Initialization and disposal methods.
 
   @override

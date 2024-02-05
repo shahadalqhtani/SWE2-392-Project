@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/backend.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -21,10 +22,45 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Color _GREE = const Color(0xb546ff00);
-  Color get GREE => _GREE;
-  set GREE(Color value) {
-    _GREE = value;
+  List<DocumentReference> _cou = [];
+  List<DocumentReference> get cou => _cou;
+  set cou(List<DocumentReference> value) {
+    _cou = value;
+  }
+
+  void addToCou(DocumentReference value) {
+    _cou.add(value);
+  }
+
+  void removeFromCou(DocumentReference value) {
+    _cou.remove(value);
+  }
+
+  void removeAtIndexFromCou(int index) {
+    _cou.removeAt(index);
+  }
+
+  void updateCouAtIndex(
+    int index,
+    DocumentReference Function(DocumentReference) updateFn,
+  ) {
+    _cou[index] = updateFn(_cou[index]);
+  }
+
+  void insertAtIndexInCou(int index, DocumentReference value) {
+    _cou.insert(index, value);
+  }
+
+  DocumentReference? _data;
+  DocumentReference? get data => _data;
+  set data(DocumentReference? value) {
+    _data = value;
+  }
+
+  bool _sar = false;
+  bool get sar => _sar;
+  set sar(bool value) {
+    _sar = value;
   }
 }
 
@@ -48,11 +84,4 @@ Future _safeInitAsync(Function() initializeField) async {
   try {
     await initializeField();
   } catch (_) {}
-}
-
-Color? _colorFromIntValue(int? val) {
-  if (val == null) {
-    return null;
-  }
-  return Color(val);
 }

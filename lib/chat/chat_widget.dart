@@ -139,9 +139,19 @@ class _ChatWidgetState extends State<ChatWidget> {
                                                       0.7,
                                             ),
                                             decoration: BoxDecoration(
-                                              color:
+                                              gradient: LinearGradient(
+                                                colors: [
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary
+                                                ],
+                                                stops: const [0.0, 1.0],
+                                                begin: const AlignmentDirectional(
+                                                    0.0, -1.0),
+                                                end: const AlignmentDirectional(
+                                                    0, 1.0),
+                                              ),
                                               borderRadius:
                                                   BorderRadius.circular(12.0),
                                             ),
@@ -318,26 +328,34 @@ class _ChatWidgetState extends State<ChatWidget> {
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   children: [
-                                                    InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        context.pop();
-                                                      },
-                                                      child: Icon(
-                                                        Icons
-                                                            .arrow_back_ios_new,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        size: 24.0,
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  3.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          context.pop();
+                                                        },
+                                                        child: Icon(
+                                                          Icons
+                                                              .arrow_back_rounded,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          size: 30.0,
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
@@ -476,7 +494,7 @@ class _ChatWidgetState extends State<ChatWidget> {
                                             TextCapitalization.sentences,
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          hintText: 'Type something...',
+                                          hintText: 'Send messages...',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodySmall,

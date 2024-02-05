@@ -8,6 +8,7 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -73,13 +74,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const HomePageWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const PageoneWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const HomePageWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const PageoneWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -202,7 +203,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           },
           builder: (context, params) => QuizWidget(
             naa: params.getParam('naa', ParamType.Document),
-            co: params.getParam('co', ParamType.Color),
           ),
         ),
         FFRoute(
@@ -214,6 +214,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ChatWidget(
             titel: params.getParam('titel', ParamType.Document),
           ),
+        ),
+        FFRoute(
+          name: 'Quiz2',
+          path: '/quiz2',
+          asyncParams: {
+            'naa': getDoc(['Subjects'], SubjectsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Quiz2Widget(
+            naa: params.getParam('naa', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'Quiz3',
+          path: '/quiz3',
+          asyncParams: {
+            'naa': getDoc(['Subjects'], SubjectsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Quiz3Widget(
+            naa: params.getParam('naa', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'Quiz4',
+          path: '/quiz4',
+          asyncParams: {
+            'naa': getDoc(['Subjects'], SubjectsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Quiz4Widget(
+            naa: params.getParam('naa', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'GAME',
+          path: '/game',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'GAME')
+              : const NavBarPage(
+                  initialPage: 'GAME',
+                  page: GameWidget(),
+                ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -381,7 +421,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/homePage';
+            return '/pageone';
           }
           return null;
         },
@@ -394,15 +434,11 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? const Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        Color(0xFF3963EF),
-                      ),
-                    ),
+              ? Container(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  child: Image.asset(
+                    'assets/images/Minimalist_Geometric_Technology_Computer_Logo_(1).png',
+                    fit: BoxFit.cover,
                   ),
                 )
               : page;

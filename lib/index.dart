@@ -1,7 +1,9 @@
 // Export pages
 export '/new/home_page/home_page_widget.dart' show HomePageWidget;
-export '/pages/pageone/pageone_widget.dart' show PageoneWidget;
-export '/pages/my_courses/my_courses_widget.dart' show MyCoursesWidget;
+export '/account_profile_creation_auth/pages/pageone/pageone_widget.dart'
+    show PageoneWidget;
+export '/account_profile_creation_auth/pages/my_courses/my_courses_widget.dart'
+    show MyCoursesWidget;
 export '/account_profile_creation_auth/auth_2_create/auth2_create_widget.dart'
     show Auth2CreateWidget;
 export '/account_profile_creation_auth/auth_2_login/auth2_login_widget.dart'
@@ -23,5 +25,9 @@ export '/new/characteristicsofthestudymaterial/characteristicsofthestudymaterial
     show CharacteristicsofthestudymaterialWidget;
 export '/new/lesson3/lesson3_widget.dart' show Lesson3Widget;
 export '/scor_page/scor_page_widget.dart' show ScorPageWidget;
-export '/new/quiz/quiz_widget.dart' show QuizWidget;
+export '/quze/quiz/quiz_widget.dart' show QuizWidget;
 export '/chat/chat_widget.dart' show ChatWidget;
+export '/quze/quiz2/quiz2_widget.dart' show Quiz2Widget;
+export '/quze/quiz3/quiz3_widget.dart' show Quiz3Widget;
+export '/quze/quiz4/quiz4_widget.dart' show Quiz4Widget;
+export '/quze/game/game_widget.dart' show GameWidget;

@@ -10,6 +10,7 @@ import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
 
 void main() async {
@@ -60,7 +61,7 @@ class _MyAppState extends State<MyApp> {
       ..listen((user) => _appStateNotifier.update(user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
-      const Duration(milliseconds: 1000),
+      const Duration(milliseconds: 4),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
   }
@@ -133,6 +134,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'HomePage': const HomePageWidget(),
       'MyCourses': const MyCoursesWidget(),
       'auth_2_Profile': const Auth2ProfileWidget(),
+      'GAME': const GameWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -164,7 +166,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.menu_book_sharp,
               size: 24.0,
             ),
-            label: 'Course ',
+            label: 'Courses ',
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -172,7 +174,15 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.person,
               size: 24.0,
             ),
-            label: 'Home',
+            label: 'Profile',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.gamepad,
+              size: 24.0,
+            ),
+            label: 'GAME',
             tooltip: '',
           )
         ],

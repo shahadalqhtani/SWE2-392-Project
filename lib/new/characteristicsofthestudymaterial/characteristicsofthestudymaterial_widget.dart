@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/saved_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'characteristicsofthestudymaterial_model.dart';
 export 'characteristicsofthestudymaterial_model.dart';
 
@@ -269,7 +271,7 @@ class _CharacteristicsofthestudymaterialWidgetState
                           const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 15.0),
                       child: Container(
                         width: 350.0,
-                        height: 350.0,
+                        height: 433.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).info,
                           borderRadius: const BorderRadius.only(
@@ -367,6 +369,7 @@ class _CharacteristicsofthestudymaterialWidgetState
                                           fontFamily: 'Outfit',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(
@@ -461,6 +464,72 @@ class _CharacteristicsofthestudymaterialWidgetState
                                           fontFamily: 'Readex Pro',
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, -1.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 30.0, 0.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    FFAppState().update(() {
+                                      FFAppState().addToCou(
+                                          columnSubjectsRecord.reference);
+                                    });
+                                    await showModalBottomSheet(
+                                      isScrollControlled: true,
+                                      backgroundColor: Colors.transparent,
+                                      enableDrag: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return WebViewAware(
+                                          child: GestureDetector(
+                                            onTap: () => _model
+                                                    .unfocusNode.canRequestFocus
+                                                ? FocusScope.of(context)
+                                                    .requestFocus(
+                                                        _model.unfocusNode)
+                                                : FocusScope.of(context)
+                                                    .unfocus(),
+                                            child: Padding(
+                                              padding: MediaQuery.viewInsetsOf(
+                                                  context),
+                                              child: const SizedBox(
+                                                height: double.infinity,
+                                                child: SavedWidget(),
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => safeSetState(() {}));
+                                  },
+                                  text: 'Add this course!',
+                                  options: FFButtonOptions(
+                                    width: 159.0,
+                                    height: 50.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).info,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiary,
                                         ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(
